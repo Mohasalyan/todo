@@ -12,7 +12,7 @@ interface TodoStore {
   todos: Todo[];
   addTodo: (text: string) => void;
   toggleTodo: (id: string) => void;
-  removeTodo: (id: string) => void; // تمت إضافة removeTodo
+  removeTodo: (id: string) => void; 
 }
 
 export const useTodoStore = create<TodoStore>((set) => {
@@ -44,7 +44,7 @@ export const useTodoStore = create<TodoStore>((set) => {
         return { todos: updatedTodos };
       });
     },
-    removeTodo: (id) => { // تم إضافة removeTodo
+    removeTodo: (id) => { 
       set((state) => {
         const filteredTodos = state.todos.filter((todo) => todo.id !== id);
         if (typeof window !== 'undefined') {
